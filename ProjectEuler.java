@@ -4,6 +4,7 @@ public class ProjectEuler {
        System.out.println("The answer to problem 1 is " + problem1());
        System.out.println("The answer to problem 2 is " + problem2());
        System.out.println("The answer to problem 3 is " + problem3());
+       System.out.println("The answer to problem 4 is " + problem4());
    }
    public static long problem0(int n) {
       long sum = 0;
@@ -42,22 +43,31 @@ public class ProjectEuler {
       return true;
    }
    public static long problem3() {
-      //long n = 600851475143L;
-      long n = 13195;
+      long n = 600851475143L;
       long max = (long) Math.sqrt(n) + 2;
        System.out.println(max);
       long i = 1;
       long big = 0;
       while (++i < max) {
-         if (isPrime(i)) System.out.println(i);
          if (n % i != 0) continue; // not factor
          long max1 = (long) Math.sqrt(i) + 2;
-         long y = n / i;
-         if (!isPrime(i)) continue;
-         System.out.println(y);
+         long y = 0;
+         if (isPrime(n / i)) y = n / i;
+         else if (isPrime(i)) y = i;
+         else continue;
          if (y > big) {
             big = y;
-            System.out.println(y);
+         }
+      }
+      return big;
+   }
+   public static long problem4() {
+      long big = 0;
+      for (int x = 1; x < 1000; x++) {
+         for (int y = 1; y < 1000; y++) {
+            long z = x * y;
+            String s = String.valueOf(z);
+            if ((new StringBuilder(s).reverse().toString()).equals(s) && z > big) big = z;
          }
       }
       return big;
