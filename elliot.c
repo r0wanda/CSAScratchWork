@@ -2,6 +2,15 @@
 #include <string.h>
 #include <stdbool.h>
 
+/*
+  50 86 56 48 85
+63
+54
+50
+85
+73
+*/
+
 bool inc(unsigned char *arr, int i) {
   if (arr[i] == 25) inc(arr, i - 1);
     arr[i]++;
