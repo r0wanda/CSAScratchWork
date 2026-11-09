@@ -10,6 +10,9 @@ import java.util.List;
 73
 */
 class Elliot {
+   class Spot {
+      
+   }
    static ArrayList<ArrayList<Integer>> comb = new ArrayList<ArrayList<Integer>>();
    static int k = 5;
    static int max = 25;
@@ -28,9 +31,10 @@ class Elliot {
     }
 
    static void main() {
+     int xs[] = {50, 86, 56, 48, 85};
+     int ys[] = {63, 54, 50, 85, 73};
      int v = 50;
      bt(0, new ArrayList<>());
-     System.out.println(comb.size());
      for (int i = 0; i < comb.size(); i++) {
          int sum = 0;
          for (int j = 0; j < k; j++) {
@@ -40,6 +44,7 @@ class Elliot {
             System.out.println(comb.get(i) + ": " + v);
          }
      }
+     System.out.println(comb.size());
    }
 
 }
